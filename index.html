@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- --------- FAVICON ---------- -->
-    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/images/L.png" type="image/x-icon">
 
-    <title>Portfolio | Ludiflex</title>
+    <title>Portfolio | LeK</title>
 </head>
 <body>
    <div class="container">
@@ -43,8 +43,17 @@
                 </li>
             </ul>
         </div>
+        <div class="language-switch">
+            <button id="lang-th" class="lang-btn">ไทย</button>
+            <button id="lang-en" class="lang-btn active">EN</button>
+        </div>
+        
         <div class="nav-button">
-            <button class="btn">Download CV <i class="uil uil-file-alt"></i></button>
+            <a href="assets/file/wirat_khamphan.pdf" download="wirat" class="btn">
+                Download CV <i class="uil uil-file-alt"></i>
+            </a>
+        </div>
+        
         </div>
         <div class="nav-menu-btn">
             <i class="uil uil-bars" onclick="myMenuFunction()"></i>
@@ -69,7 +78,9 @@
             </div>
             <div class="featured-text-btn">
                 <button class="btn blue-btn">Hire Me</button>
-                <button class="btn">Download CV <i class="uil uil-file-alt"></i></button>
+                <a href="/assets/file/wirat_khamphan.pdf" download="wirat" class="btn">
+                    Download CV <i class="uil uil-file-alt"></i>
+                </a>
             </div>
             <div class="social_icons">
                 <a href="https://www.instagram.com/wirat0khamphan/" target="_blank">
@@ -115,8 +126,10 @@
                        WordPress.
                     </p>
                     <div class="about-btn">
-                        <button class="btn">Download CV <i class="uil uil-import"></i></button>
+                        <button class="btn" id="downloadBtn">Download CV <i class="uil uil-import"></i></button>
+                        
                     </div>
+                    
                 </div>
             </div>
             <div class="col">
@@ -160,28 +173,39 @@
        <!-- -------------- PROJECT BOX ---------------- -->
 
        <section class="section" id="projects">
-          <div class="top-header">
-              <h1>Projects</h1>
-          </div>
-          <div class="project-container">
-            <div class="project-box">
-                <i class="uil uil-briefcase-alt"></i>
-                <h3>Completed</h3>
-                <label>1+ Finished Projects</label>
-            </div>
-            <div class="project-box">
-                <i class="uil uil-users-alt"></i>
-                <h3>Clients</h3>
-                <label>1+ Happy Clients</label>
-            </div>
-            <div class="project-box">
-                <i class="uil uil-award"></i>
-                <h3>Experience</h3>
-                <label>1+ Years in the field</label>
+        <div class="top-header">
+          <h1>Projects</h1>
+        </div>
+        <div class="project-container">
+          <div class="project-box">
+            <i class="uil uil-briefcase-alt"></i>
+            <h3>Completed</h3>
+            <label>1+ Finished Projects</label>
+            <div class="hover-panel">
+              <a href="Projects/index.html" target="" class="">View Details</a>
             </div>
           </div>
-       </section>
+          <div class="project-box">
+            <i class="uil uil-users-alt"></i>
+            <h3>Clients</h3>
+            <label>1+ Happy Clients</label>
+            <div class="hover-panel">
+                <a href="" target="_blank" class="">View Details</a>
+              </div>
+          </div>
+          <div class="project-box">
+            <i class="uil uil-award"></i>
+            <h3>Experience</h3>
+            <label>1+ Years in the field</label>
+            <div class="hover-panel">
+                <a href="" target="_blank" class="">View Details</a>
+              </div>
+          </div>
+        </div>
+      </section>
+      
 
+       
        <!-- -------------- CONTACT BOX ---------------- -->
 
        <section class="section" id="contact">
@@ -200,17 +224,18 @@
              <div class="col">
                 <div class="form-control">
                     <div class="form-inputs">
-                        <input type="text" class="input-field" placeholder="Name">
-                        <input type="text" class="input-field" placeholder="Email">
+                        <input type="text" id="name" class="input-field" placeholder="Name">
+                        <input type="text" id="email" class="input-field" placeholder="Email">
                     </div>
                     <div class="text-area">
-                        <textarea placeholder="Message"></textarea>
+                        <textarea id="message" placeholder="Message"></textarea>
                     </div>
                     <div class="form-button">
-                        <button class="btn">Send <i class="uil uil-message"></i></button>
+                        <button class="btn" onclick="sendMessage()">Send <i class="uil uil-message"></i></button>
                     </div>
                 </div>
-             </div>
+            </div>
+            
           </div>
        </section>
 
@@ -259,7 +284,7 @@
 
 
 
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- ----- TYPING JS Link ----- -->
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 
@@ -268,5 +293,8 @@
 
     <!-- ----- MAIN JS ----- -->
     <script src="assets/js/main.js"></script>
+     <!-- ----- API 8080  ----- -->
+     <script type="module" src="assets/js/message.js"></script>
+
 </body>
 </html>

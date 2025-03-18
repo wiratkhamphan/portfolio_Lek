@@ -15,6 +15,7 @@
     --second-color: rgb(0, 201, 255);
     --third-color: rgb(192, 166, 49);
     --first-shadow-color: rgba(0, 0, 0, 0.1);
+    
 
 }
 
@@ -52,6 +53,7 @@ html{
 
 /* ----- GLOBAL BUTTON DESIGN ----- */
 .btn{
+    text-decoration: none;
     font-weight: 500;
     padding: 12px 20px;
     background: #efefef;
@@ -59,7 +61,11 @@ html{
     border-radius: 10px;
     cursor: pointer;
     transition: .4s;
+    color: #000;
+    font-size: 14px; 
+    
 }
+
 .btn>i{
     margin-left: 10px;
 }
@@ -220,9 +226,10 @@ nav{
     border-radius: 50%;
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
     cursor: pointer;
+    color: #000;
 }
 .icon:hover{
-    color: var(--first-color);
+    color: var(--irst-color);
 }
 
 /* ----- FEATURED IMAGE BOX ----- */
@@ -398,6 +405,7 @@ h3{
     transition: .4s;
     z-index: 1;
 }
+
 .project-box:hover.project-box::after,
 .contact-info:hover.contact-info::after{
     bottom: 0;
@@ -408,6 +416,61 @@ h3{
     color: var(--color-white);
     z-index: 2;
 }
+
+
+.hover-panel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 24px;
+    transition: opacity 0.3s ease, box-shadow 0.3s ease; 
+    z-index: 2;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 15px;
+
+
+}
+
+
+.project-box:hover .hover-panel {
+    opacity: 1;
+}
+
+.hover-panel a {
+    align-items: center;
+    background: white;
+    border: 1px solid #a9cafc;
+    border-radius: 24px;
+    box-sizing: border-box;
+    color: #0c0c0c;
+    display: flex;
+    font-size: 16px;
+    font-weight: 500;
+    height: 48px;
+    justify-content: center;
+    max-width: 192px;
+    overflow-wrap: anywhere;
+    padding: 0 28px;
+    pointer-events: all;
+    text-align: center;
+    text-decoration: none
+}
+
+
+.hover-panel a:hover {
+    background-color: #000000; 
+    color: #ffffff;
+    transform: scale(1.1); 
+}
+
 
 /* ----- CONTACT BOX ----- */
 .contact-info{
@@ -614,6 +677,7 @@ footer{
     .project-box{
         width: 80%;
     }
+    
 
 }
 
@@ -632,4 +696,25 @@ footer{
     .input-field{
         width: 100%;
     }
+}
+
+.language-switch {
+    display: flex;
+    gap: 10px;
+}
+/* เปลี่ยน ภาษา */
+.lang-btn {
+    padding: 6px 12px;
+    border: none;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.lang-btn.active {
+    background-color: #000;
+    color: #fff;
 }
